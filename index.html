@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D4nish Khan</title>
+
+  <!-- EmailJS library -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    (function(){
+      emailjs.init("1Y1xfIB_V9cTGpuCT");
+    })();
+  </script>
+
+  <link rel="stylesheet" href="./assets/index-BlMH5uTb.css">
+  <script type="module" crossorigin src="/assets/index-D16u-A7H.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BlMH5uTb.css">
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <!-- React App -->
+
+  <!-- EmailJS form handler -->
+  <script>
+
+  document.addEventListener("DOMContentLoaded", function(){
+
+    const form = document.getElementById("contact-form");
+
+    if(!form) return;
+
+    form.addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      emailjs.send("service_6p60t3q","template_prm1685",{
+
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+
+      })
+      .then(function(){
+
+        alert("Message sent successfully!");
+
+      })
+      .catch(function(){
+
+        alert("Failed to send message");
+
+      });
+
+    });
+
+  });
+
+  </script>
+
+</body>
+</html>
